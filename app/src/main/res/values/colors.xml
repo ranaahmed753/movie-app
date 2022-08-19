@@ -12,4 +12,5 @@
     <color name="card_item_color">#171538</color>
     <color name="rating_color">#F9A602</color>
     <color name="light_gray">#BCBEC0</color>
+    <color name="color_overview">#6E7089</color>
 </resources>

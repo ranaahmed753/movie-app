@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.bumptech.glide.Glide
+import edu.notes.movieapp.view.DetailsActivity
 import edu.notes.movieapp.R
 import edu.notes.movieapp.databinding.viewholder.MovieViewHolder
 import edu.notes.movieapp.datamodel.Results
 import edu.notes.movieapp.utilities.AnimationController
-import edu.notes.movieapp.utilities.Constants
 import edu.notes.movieapp.view.MainActivity
-import edu.notes.movieapp.view.MovieDetailsActivity
-import javax.inject.Inject
 
 class MoviePagingAdapter(var context : Context) : PagingDataAdapter<Results,MovieViewHolder>(Diff_Util),MovieViewHolder.onItemClick {
 
@@ -49,7 +46,7 @@ class MoviePagingAdapter(var context : Context) : PagingDataAdapter<Results,Movi
 
     override fun onNavigateToMovieDetailsPage(position: Int, holder: MovieViewHolder) {
         val currentItem = getItem(position)
-        val intent = Intent(context, MovieDetailsActivity::class.java)
+        val intent = Intent(context, DetailsActivity::class.java)
         intent.putExtra("id",currentItem!!.id)
         intent.putExtra("title",currentItem!!.title)
         intent.putExtra("image",currentItem.poster_path)

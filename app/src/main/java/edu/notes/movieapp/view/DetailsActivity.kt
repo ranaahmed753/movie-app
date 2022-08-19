@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.bumptech.glide.Glide
 import edu.notes.movieapp.R
 import edu.notes.movieapp.utilities.AnimationController
@@ -15,6 +16,7 @@ import edu.notes.movieapp.utilities.Navigation
 
 class DetailsActivity : AppCompatActivity() {
 
+    private lateinit var coordinatorLayout : CoordinatorLayout
     private lateinit var movieImage : ImageView
     private lateinit var movieName : TextView
     private lateinit var movieOverView : TextView
@@ -47,6 +49,7 @@ class DetailsActivity : AppCompatActivity() {
         backButton = findViewById(R.id.backButton)
         popularityCount = findViewById(R.id.popularityCount)
         voteCount = findViewById(R.id.voteCount)
+        coordinatorLayout = findViewById(R.id.coordinatorLayout)
 
 
         val Id = intent.getStringExtra("id")
@@ -75,6 +78,11 @@ class DetailsActivity : AppCompatActivity() {
         AnimationController.fadeInAnimation(backButton,this@DetailsActivity)
             Navigation.navigate(this@DetailsActivity,MainActivity())
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        AnimationController.fadeInAnimation(coordinatorLayout,this@DetailsActivity)
     }
 
 

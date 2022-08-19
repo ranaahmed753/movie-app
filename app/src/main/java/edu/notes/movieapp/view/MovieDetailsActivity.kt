@@ -24,6 +24,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var movieReleaseDate : TextView
     private lateinit var movieVoteCount : TextView
     private lateinit var movieVoteAverage : TextView
+    private lateinit var movieId : TextView
     private lateinit var constraintLayout: ConstraintLayout
 
 
@@ -45,6 +46,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         movieVoteCount = findViewById(R.id.voteCount)
         movieVoteAverage = findViewById(R.id.ratingPoint)
         movieRatingbar = findViewById(R.id.ratingBar)
+        movieId = findViewById(R.id.movieId)
         constraintLayout = findViewById(R.id.constraintLayout)
 
         backButton.setOnClickListener {
@@ -52,6 +54,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             Navigation.navigate(this,MainActivity())
         }
 
+        val Id = intent.getStringExtra("id")
         val title = intent.getStringExtra("title")
         val image = intent.getStringExtra("image")
         val overview = intent.getStringExtra("overview")
@@ -60,6 +63,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         val vote_count = intent.getStringExtra("vote_count")
         val vote_average = intent.getStringExtra("vote_average")
 
+        movieId.text = Id
         movieName.text = title
         Glide.with(this).load(Constants.imageBase+image).into(movieImage)
         movieOverView.text = overview

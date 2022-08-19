@@ -183,6 +183,30 @@
             android:textSize="12sp"
             android:layout_marginLeft="5dp"
             android:fontFamily="@font/nunito_sans"/>
+        <TextView
+            android:id="@+id/movieIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/releasedateText"
+            app:layout_constraintTop_toBottomOf="@+id/releasedateText"
+            android:text="Id:"
+            android:layout_marginTop="10dp"
+            android:textColor="#2D3C60"
+            android:textSize="12sp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/nunito_sans"/>
+        <TextView
+            android:id="@+id/movieId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/movieIdText"
+            app:layout_constraintTop_toTopOf="@+id/movieIdText"
+            app:layout_constraintBottom_toBottomOf="@+id/movieIdText"
+            android:text="1234"
+            android:textColor="#2D3C60"
+            android:textSize="12sp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/nunito_sans"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,7 +1,7 @@
 package edu.notes.movieapp.datamodel
 
 data class Results(
-    val id: Int,
+    val id: String,
     val overview: String,
     val poster_path: String,
     val title: String,

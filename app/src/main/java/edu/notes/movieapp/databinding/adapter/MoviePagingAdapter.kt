@@ -50,6 +50,7 @@ class MoviePagingAdapter(var context : Context) : PagingDataAdapter<Results,Movi
     override fun onNavigateToMovieDetailsPage(position: Int, holder: MovieViewHolder) {
         val currentItem = getItem(position)
         val intent = Intent(context, MovieDetailsActivity::class.java)
+        intent.putExtra("id",currentItem!!.id)
         intent.putExtra("title",currentItem!!.title)
         intent.putExtra("image",currentItem.poster_path)
         intent.putExtra("overview",currentItem.overview)
